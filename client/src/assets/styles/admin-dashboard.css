@@ -1,0 +1,44 @@
+/* src/assets/styles/admin-dashboard.css */
+.admin-container {
+    padding: 20px;
+  }
+  
+  .tab-menu {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .tab-menu button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .tab-menu button.active {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .tab-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .tab-content h3 {
+    margin-bottom: 10px;
+  }
+  
+  .tab-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .tab-content li {
+    margin-bottom: 10px;
+  }
+  
