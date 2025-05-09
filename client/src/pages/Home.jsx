@@ -24,8 +24,8 @@ const Home = () => {
         <h2>Fitur</h2>
         <div className="fitur-grid">
           <Link to="/animals" className="fitur-card">🐯 Daftar Hewan</Link>
-          <Link to="/quiz" className="fitur-card">🧠 Kuis Interaktif</Link>
-          <Link to="/chatbot" className="fitur-card">🤖 Chatbot Edukatif</Link>
+          <Link to="/quiz" className="fitur-card">🧠 Kuis </Link>
+          <Link to="/chatbot" className="fitur-card">🤖 Chatbot</Link>
           <Link to="/gallery" className="fitur-card">🖼️ Galeri Gambar</Link>
           <Link to="/minigame" className="fitur-card">🎮 Mini Game</Link>
         </div>

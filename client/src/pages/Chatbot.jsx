@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from '../api/api';
-import '../assets/styles/Chatbot.css'
+import '../assets/styles/Chatbot.css';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([
@@ -17,10 +17,20 @@ const Chatbot = () => {
 
     try {
       const res = await axios.post('/chatbot/ask', { message: input });
-      const botMessage = { sender: 'bot', text: res.data.response };
+
+      const reply = res?.data?.response?.trim();
+      const botMessage = {
+        sender: 'bot',
+        text: reply ? reply : 'Maaf, saya tidak mengerti pertanyaanmu.'
+      };
+
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
-      const botMessage = { sender: 'bot', text: 'Terjadi kesalahan. Coba lagi nanti.' };
+      console.error('Error chatbot:', error);
+      const botMessage = {
+        sender: 'bot',
+        text: 'Terjadi kesalahan. Silakan coba lagi nanti.'
+      };
       setMessages((prev) => [...prev, botMessage]);
     }
 
@@ -36,7 +46,7 @@ const Chatbot = () => {
       <h2>Chatbot Edukasi</h2>
       <div className="chat-window">
         {messages.map((msg, idx) => (
-          <div key={idx} className={`chat-message ${msg.sender === 'user' ? 'user' : 'bot'}`}>
+          <div key={idx} className={`chat-message ${msg.sender}`}>
             {msg.text}
           </div>
         ))}
